@@ -7,5 +7,10 @@ node {
         stage('Test and Report'){
             sh 'echo "testing"'
         }
+        stage('Test'){
+            steps {
+                sh 'npm run test'
+            }
+        }
     }
 }
