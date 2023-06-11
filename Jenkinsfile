@@ -1,16 +1,14 @@
 node {
     checkout scm
     docker.image('node:lts-bullseye-slim').inside {
-        stage('Checkout') {
-            sh 'echo "This is a test"'
-        }
-        stage('Test and Report'){
-            sh 'echo "testing"'
+        stage('Build') {
+            sh 'npm install'
         }
         stage('Test'){
-            steps {
-                sh 'npm run test'
-            }
+            sh 'npm run test'
+        }
+        stage('Repost'){
+            sh 'echo "So far no actions here"'
         }
     }
 }
